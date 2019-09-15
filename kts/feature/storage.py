@@ -336,7 +336,7 @@ class FeatureList(MutableSequence):
             self.name_to_idx[functor.__name__] = idx
 
     def __repr__(self):
-        self.recalc()
+        self.define_in_scope(config.SCOPE)
         string = f"[{', '.join([f.__str__() for f in self.functors])}]"
         return string
 
